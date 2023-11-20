@@ -2,13 +2,11 @@
 
 namespace UmlDiagramMix.BehaviorPatterns
 {
-    // Command interfaces
     public interface ICommand
     {
         void Execute();
     }
 
-    // Concrete Command classes
     public class SaveCommand : ICommand
     {
         private readonly Receiver _receiver;
@@ -54,7 +52,6 @@ namespace UmlDiagramMix.BehaviorPatterns
         }
     }
 
-    // Receiver class (Object that performs the commands)
     public class Receiver
     {
         public void Save()
@@ -73,7 +70,6 @@ namespace UmlDiagramMix.BehaviorPatterns
         }
     }
 
-    // Client class (Object that uses the commands)
     public class Button
     {
         private ICommand _command;
@@ -105,9 +101,9 @@ namespace UmlDiagramMix.BehaviorPatterns
             Button printButton = new Button(printCommand);
             Button openButton = new Button(openCommand);
 
-            saveButton.Shortcut(); // Çıktı: "Save command executed"
-            printButton.Shortcut(); // Çıktı: "Print command executed"
-            openButton.Shortcut(); // Çıktı: "Open command executed"
+            saveButton.Shortcut(); 
+            printButton.Shortcut(); 
+            openButton.Shortcut(); 
         }
     }
 }
